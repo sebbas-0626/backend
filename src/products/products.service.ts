@@ -35,7 +35,6 @@ export class ProductsService {
     } catch {
       throw new NotFoundException(`Product with id ${id} not found`);
     }
-    
   }
 
   remove(id: number) {
