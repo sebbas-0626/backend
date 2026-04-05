@@ -13,7 +13,8 @@ export class ProductsService {
   }
 
   findAll() {
-    return this.prismaService.product.findMany();
+    return this.prismaService
+    .product.findMany();
   }
 
   async findOne(id: number) {
