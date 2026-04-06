@@ -5,7 +5,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class ProductsService {
-  constructor(private prismaService: PrismaService) {}
+  constructor(private prismaService: PrismaService) { }
   create(createProductDto: CreateProductDto) {
     return this.prismaService.product.create({
       data: createProductDto,
@@ -14,7 +14,7 @@ export class ProductsService {
 
   findAll() {
     return this.prismaService
-    .product.findMany();
+      .product.findMany();
   }
 
   async findOne(id: number) {
@@ -25,8 +25,8 @@ export class ProductsService {
       throw new NotFoundException(`Product with id ${id} not found`);
     }
     return product;
-  } 
-  
+  }
+
   async update(id: number, updateProductDto: UpdateProductDto) {
     try {
       return await this.prismaService.product.update({
@@ -35,7 +35,7 @@ export class ProductsService {
       });
     } catch {
       throw new NotFoundException(`Product with id ${id} not found`);
-      
+
     }
   }
 
