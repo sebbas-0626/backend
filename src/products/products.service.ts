@@ -26,6 +26,7 @@ export class ProductsService {
     }
     return product;
   }
+  
 
   async update(id: number, updateProductDto: UpdateProductDto) {
     try {
